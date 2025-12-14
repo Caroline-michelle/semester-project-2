@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auction House – Login</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="siteHeader"></header>
+
+    <main class="page auth-page">
+      <section class="auth-card">
+        <h1 class="auth-title">Log in</h1>
+        <p class="auth-subtitle">
+          Log in with your Noroff student email to access bidding and profile
+          features.
+        </p>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="email">Email (must end with @stud.noroff.no)</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@stud.noroff.no"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="8"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <p id="loginError" class="form-error" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn-primary auth-btn">Log in</button>
+        </form>
+
+        <p class="auth-helper-text">
+          Don’t have an account yet? You can register on the Noroff Auction API
+          site.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./js/layout.js"></script>
+    <script type="module" src="./js/login.js"></script>
+  </body>
+</html>

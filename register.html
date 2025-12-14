@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auction House – Register</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="siteHeader"></header>
+
+    <main class="page auth-page">
+      <section class="auth-card">
+        <h1 class="auth-title">Create account</h1>
+        <p class="auth-subtitle">
+          You must use a Noroff student email ending with
+          <strong>@stud.noroff.no</strong>.
+        </p>
+
+        <form id="registerForm" novalidate>
+          <div class="form-group">
+            <label for="name">Username</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="3"
+              placeholder="e.g. caroline-michelle"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@stud.noroff.no"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password (min 8 characters)</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="8"
+              placeholder="Create a password"
+            />
+          </div>
+
+          <p id="registerError" class="form-error" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn-primary auth-btn">
+            Create account
+          </button>
+        </form>
+
+        <p class="auth-helper-text">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./js/layout.js"></script>
+    <script type="module" src="./js/register.js"></script>
+  </body>
+</html>

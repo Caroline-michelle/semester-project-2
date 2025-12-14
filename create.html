@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auction House – Create listing</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="siteHeader"></header>
+
+    <main class="page auth-page">
+      <section class="auth-card">
+        <h1 class="auth-title">Create listing</h1>
+        <p class="auth-subtitle">
+          Create a new auction listing. You must be logged in.
+        </p>
+
+        <form id="createListingForm">
+          <div class="form-group">
+            <label for="title">Title *</label>
+            <input id="title" required minlength="3" />
+          </div>
+
+          <div class="form-group">
+            <label for="endsAt">End date *</label>
+            <input id="endsAt" type="datetime-local" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input id="imageUrl" type="url" />
+          </div>
+
+          <div class="form-group">
+            <label for="imageAlt">Image alt text</label>
+            <input id="imageAlt" />
+          </div>
+
+          <p id="createError" class="form-error"></p>
+
+          <button class="btn btn-primary auth-btn">Create listing</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="./js/layout.js"></script>
+    <script type="module" src="./js/createlisting.js"></script>
+  </body>
+</html>
