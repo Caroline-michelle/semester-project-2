@@ -11,18 +11,14 @@
     <main class="page auth-page">
       <section class="auth-card">
         <h1 class="auth-title">Log in</h1>
-        <p class="auth-subtitle">
-          Log in with your Noroff student email to access bidding and profile
-          features.
-        </p>
+        <p class="auth-subtitle">Use your Noroff student email.</p>
 
         <form id="loginForm" novalidate>
           <div class="form-group">
-            <label for="email">Email (must end with @stud.noroff.no)</label>
+            <label for="email">Email (@stud.noroff.no)</label>
             <input
-              type="email"
               id="email"
-              name="email"
+              type="email"
               required
               placeholder="you@stud.noroff.no"
             />
@@ -30,14 +26,7 @@
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              required
-              minlength="8"
-              placeholder="Enter your password"
-            />
+            <input id="password" type="password" required minlength="8" />
           </div>
 
           <p id="loginError" class="form-error" aria-live="polite"></p>
@@ -46,8 +35,7 @@
         </form>
 
         <p class="auth-helper-text">
-          Don’t have an account yet? You can register on the Noroff Auction API
-          site.
+          No account? <a href="register.html">Register</a>
         </p>
       </section>
     </main>

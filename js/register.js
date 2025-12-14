@@ -1,53 +1,34 @@
 import { registerUser } from "./auth.js";
 
 const form = document.getElementById("registerForm");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const errorElement = document.getElementById("registerError");
+const errorEl = document.getElementById("registerError");
 
-if (form) {
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    errorElement.textContent = "";
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  errorEl.textContent = "";
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-    if (name.length < 3) {
-      errorElement.textContent = "Username must be at least 3 characters.";
-      return;
-    }
+  if (name.length < 3) {
+    errorEl.textContent = "Username must be at least 3 characters.";
+    return;
+  }
+  if (!email.endsWith("@stud.noroff.no")) {
+    errorEl.textContent = "Email must end with @stud.noroff.no";
+    return;
+  }
+  if (password.length < 8) {
+    errorEl.textContent = "Password must be at least 8 characters.";
+    return;
+  }
 
-    if (!email.endsWith("@stud.noroff.no")) {
-      errorElement.textContent = "Email must end with @stud.noroff.no.";
-      return;
-    }
-
-    if (password.length < 8) {
-      errorElement.textContent = "Password must be at least 8 characters.";
-      return;
-    }
-
-    const submitButton = form.querySelector("button[type='submit']");
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Creating account...";
-    }
-
-    try {
-      await registerUser(name, email, password);
-
-      window.location.href = "login.html";
-    } catch (error) {
-      console.error(error);
-      errorElement.textContent = error.message;
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = "Create account";
-      }
-    }
-  });
-}
+  try {
+    await registerUser(name, email, password);
+    window.location.href = "login.html";
+  } catch (err) {
+    console.error(err);
+    errorEl.textContent = err.message;
+  }
+});

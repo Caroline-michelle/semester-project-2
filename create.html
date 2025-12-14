@@ -11,18 +11,15 @@
     <main class="page auth-page">
       <section class="auth-card">
         <h1 class="auth-title">Create listing</h1>
-        <p class="auth-subtitle">
-          Create a new auction listing. You must be logged in.
-        </p>
 
-        <form id="createListingForm">
+        <form id="createListingForm" novalidate>
           <div class="form-group">
             <label for="title">Title *</label>
             <input id="title" required minlength="3" />
           </div>
 
           <div class="form-group">
-            <label for="endsAt">End date *</label>
+            <label for="endsAt">End date & time *</label>
             <input id="endsAt" type="datetime-local" required />
           </div>
 
@@ -32,18 +29,20 @@
           </div>
 
           <div class="form-group">
-            <label for="imageUrl">Image URL</label>
-            <input id="imageUrl" type="url" />
+            <label for="imageUrl">Image URL </label>
+            <input id="imageUrl" type="url" placeholder="https://..." />
           </div>
 
           <div class="form-group">
-            <label for="imageAlt">Image alt text</label>
-            <input id="imageAlt" />
+            <label for="imageAlt">Image alt text </label>
+            <input id="imageAlt" type="text" />
           </div>
 
-          <p id="createError" class="form-error"></p>
+          <p id="createError" class="form-error" aria-live="polite"></p>
 
-          <button class="btn btn-primary auth-btn">Create listing</button>
+          <button type="submit" class="btn btn-primary auth-btn">
+            Create listing
+          </button>
         </form>
       </section>
     </main>

@@ -1,3 +1,75 @@
-<header id="siteHeader"></header>
-<script type="module" src="./js/layout.js"></script>
-<link rel="stylesheet" href="./css/style.css" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auction House – Profile</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="siteHeader"></header>
+
+    <main class="page">
+      <section class="page-header">
+        <h1>My profile</h1>
+      </section>
+
+      <section class="profile-card" id="profileCard">
+        <div class="profile-banner" id="profileBanner"></div>
+
+        <div class="profile-main">
+          <div class="profile-avatar">
+            <img id="profileAvatar" src="" alt="Avatar" />
+          </div>
+
+          <div class="profile-info">
+            <h2 id="profileName">—</h2>
+            <p class="profile-bio" id="profileBio">—</p>
+            <p class="profile-credits">
+              Credits: <span class="badge" id="profileCredits">—</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-edit">
+        <h2>Edit profile</h2>
+        <form id="profileForm" class="profile-form" novalidate>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea
+              id="bio"
+              rows="3"
+              placeholder="Write a short bio…"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="avatarUrl">Avatar URL</label>
+            <input id="avatarUrl" type="url" placeholder="" />
+          </div>
+
+          <div class="form-group">
+            <label for="bannerUrl">Banner URL</label>
+            <input id="bannerUrl" type="url" placeholder="" />
+          </div>
+
+          <p id="profileError" class="form-error" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </section>
+
+      <section class="profile-section">
+        <h2>My listings</h2>
+        <div id="myListings" class="listings-grid"></div>
+      </section>
+
+      <section class="profile-section">
+        <h2>My wins</h2>
+        <div id="myWins" class="listings-grid"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/layout.js"></script>
+    <script type="module" src="./js/profile.js"></script>
+  </body>
+</html>

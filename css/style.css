@@ -1,20 +1,13 @@
-/* ========== DESIGN SYSTEM ========== */
 :root {
-  /* Blues */
-  --color-primary: #4f73c3; /* Rolig blå */
-  --color-primary-dark: #3c5aa3; /* Hover / active */
-  --color-primary-soft: #e7edfa; /* Lys bakgrunn */
+  --color-primary: #809bce;
+  --color-primary-dark: #3c5aa3;
+  --color-primary-soft: #e7edfa;
 
-  /* Grays */
   --color-text: #111827;
   --color-muted: #6b7280;
   --color-border: #d1d5db;
   --color-bg: #f5f7fb;
 
-  /* Accent (kan brukes senere, f.eks. bid button) */
-  --color-accent: #f97316;
-
-  /* Shadows */
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -30,8 +23,6 @@ body {
   color: var(--color-text);
 }
 
-/* ========== PAGE LAYOUT ========== */
-
 .page {
   padding: 2rem 2.5rem;
 }
@@ -40,20 +31,17 @@ body {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-
 .page-header h1 {
   margin: 0 0 0.25rem 0;
   font-size: 1.8rem;
 }
-
 .page-subtitle {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.95rem;
 }
 
-/* ========== NAVBAR ========== */
-
+/* NAV */
 #siteHeader {
   background: var(--color-primary);
   color: white;
@@ -64,45 +52,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 2.2rem; /* tykkere navbar */
+  padding: 1.4rem 2.2rem;
+  gap: 1rem;
 }
 
-/* Logo */
 .logo {
   color: white;
   font-weight: 700;
   font-size: 1.4rem;
   text-decoration: none;
-  letter-spacing: 0.02em;
 }
-
-/* Nav links */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-right a {
-  color: white;
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
-}
-
-.nav-right a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Search i midten */
 
 .nav-middle {
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .search-wrapper {
@@ -110,7 +75,6 @@ body {
   width: 100%;
   max-width: 460px;
 }
-
 .search-wrapper::before {
   content: "🔍";
   position: absolute;
@@ -118,7 +82,6 @@ body {
   top: 50%;
   transform: translateY(-50%);
   opacity: 0.7;
-  font-size: 1.1rem;
 }
 
 #globalSearch {
@@ -126,23 +89,46 @@ body {
   padding: 12px 16px 12px 40px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
-  background: #ffffff;
+  background: #fff;
   font-size: 1rem;
   box-shadow: var(--shadow-medium);
-  transition: all 0.2s ease;
-}
-
-#globalSearch::placeholder {
-  color: var(--color-muted);
 }
 
 #globalSearch:focus {
   outline: 3px solid var(--color-primary-soft);
-  background: #ffffff;
 }
 
-/* ========== KNAPPER & BADGES ========== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav-right a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-logout {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-logout:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Buttons */
 .btn {
   padding: 10px 18px;
   border-radius: 8px;
@@ -151,12 +137,10 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
 }
-
 .btn-primary {
   background: var(--color-primary);
   color: white;
 }
-
 .btn-primary:hover {
   background: var(--color-primary-dark);
 }
@@ -166,12 +150,12 @@ body {
   border-radius: 999px;
   background: var(--color-primary-soft);
   color: var(--color-primary-dark);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
-/* ========== LISTINGS GRID & CARDS (forsiden) ========== */
-
+/* LISTINGS GRID */
 .listings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -180,7 +164,7 @@ body {
 }
 
 .listing-card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   border: 1px solid var(--color-border);
   padding: 1rem;
@@ -204,24 +188,22 @@ body {
 .listing-title {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem 0;
 }
-
 .listing-meta {
   font-size: 0.85rem;
   color: var(--color-muted);
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .listing-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-/* ========== SINGLE LISTING PAGE ========== */
-
+/* SINGLE LISTING */
 .listing-layout {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
@@ -239,7 +221,7 @@ body {
 }
 
 .listing-info {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid var(--color-border);
   padding: 1.5rem;
   border-radius: 12px;
@@ -247,107 +229,54 @@ body {
 }
 
 .listing-info h1 {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem 0;
   font-size: 1.9rem;
 }
-
 .listing-seller,
 .listing-ends,
 .listing-current-bid {
   margin: 0.25rem 0;
   color: var(--color-muted);
-  font-size: 0.95rem;
 }
-
-.listing-current-bid .badge {
-  margin-left: 0.25rem;
-}
-
 .listing-description {
   margin-top: 1rem;
   line-height: 1.5;
 }
 
-/* Bids section */
-
 .bids-section {
   margin-top: 2.5rem;
 }
-
-.bids-section h2 {
-  margin-bottom: 0.75rem;
-}
-
 .bids-list {
   list-style: none;
   padding: 0;
   margin: 0;
   border-radius: 12px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
 }
-
 .bid-item {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-border);
-  font-size: 0.9rem;
 }
-
 .bid-item:last-child {
   border-bottom: none;
 }
-
-.bid-amount {
-  font-weight: 600;
-}
-
 .bid-meta {
   color: var(--color-muted);
 }
 
-/* ========== RESPONSIV ========== */
-
-@media (max-width: 900px) {
-  .listing-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-  }
-
-  .nav-middle {
-    order: 3;
-    width: 100%;
-    padding: 0.25rem 0;
-  }
-
-  .nav-right {
-    order: 2;
-    margin-left: auto;
-  }
-
-  .page {
-    padding: 1.5rem 1.25rem;
-  }
-}
+/* AUTH PAGES */
 .auth-page {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: calc(100vh - 80px);
 }
-
 .auth-card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 16px;
   padding: 2rem;
   max-width: 560px;
@@ -356,16 +285,13 @@ body {
   box-shadow: var(--shadow-medium);
   border: 1px solid var(--color-border);
 }
-
 .auth-title {
   margin: 0 0 0.5rem 0;
   font-size: 1.7rem;
 }
-
 .auth-subtitle {
   margin: 0 0 1.5rem 0;
   color: var(--color-muted);
-  font-size: 0.95rem;
 }
 
 .form-group {
@@ -373,23 +299,25 @@ body {
   flex-direction: column;
   margin-bottom: 1rem;
 }
-
 .form-group label {
   font-size: 0.9rem;
   margin-bottom: 0.35rem;
 }
-
-.form-group input {
+.form-group input,
+.form-group textarea {
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
   border: 1px solid var(--color-border);
   font-size: 0.95rem;
 }
-
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: 2px solid var(--color-primary-soft);
   border-color: var(--color-primary);
   background: #f9fafb;
+}
+.form-group textarea {
+  resize: vertical;
 }
 
 .form-error {
@@ -398,30 +326,129 @@ body {
   min-height: 1.2em;
   margin: 0 0 0.75rem 0;
 }
-
 .auth-btn {
   width: 100%;
   margin-top: 0.5rem;
 }
-
 .auth-helper-text {
   margin-top: 1rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--color-muted);
   text-align: center;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+  .listing-layout {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+  }
+  .nav-middle {
+    order: 3;
+    width: 100%;
+    padding: 0.25rem 0;
+  }
+  .page {
+    padding: 1.5rem 1.25rem;
+  }
   .auth-card {
     margin-top: 2rem;
     padding: 1.5rem;
   }
 }
-.nav-logout {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
+/* PROFILE */
+.profile-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-top: 1rem;
+}
+
+.profile-banner {
+  height: 160px;
+  background: var(--primary);
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+}
+
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-top: -60px;
+  box-shadow: var(--shadow-medium);
+  background: white;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-bio {
+  margin: 0.35rem 0 0.75rem 0;
+  color: var(--color-muted);
+}
+
+.profile-credits {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.profile-edit {
+  margin-top: 2rem;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-section {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-avatar img {
+    margin-top: -50px;
+  }
+}
+/* BID UI */
+.bid-section {
+  margin-top: 2rem;
+}
+.bid-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+  max-width: 720px;
+}
+.bid-hint {
+  color: var(--color-muted);
+  margin-top: 0.25rem;
+}
+.bid-form {
+  margin-top: 1rem;
 }
